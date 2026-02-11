@@ -3,6 +3,7 @@ const noBtn = document.getElementById("noBtn");
 const successScreen = document.getElementById("successScreen");
 const questionScreen = document.getElementById("questionScreen");
 const catArea = document.getElementById("catArea");
+const song = document.getElementById("loveSong");
 
 // Detectar si es móvil
 const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);

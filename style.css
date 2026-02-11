@@ -1,81 +1,88 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    margin: 0;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  .screen {
-    display: none;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .screen.active {
-    display: flex;
-  }
-  
-  .question-box, .success-box {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  }
-  
-  .buttons-container {
-    margin-top: 20px;
-    position: relative;
-  }
-  
-  .game-btn {
-    font-size: 20px;
-    padding: 12px 30px;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    margin: 10px;
-  }
-  
-  .yes-btn {
-    background: #ff4d6d;
-    color: white;
-  }
-  
-  .no-btn {
-    background: #adb5bd;
-    color: white;
-    position: relative;
-  }
-  
-  .modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .modal-content {
-    background: white;
-    padding: 25px;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 300px;
-  }
-  
-  .cat-img {
-    width: 100%;
-    border-radius: 15px;
-  }
-  
-  .cat-text {
-    font-size: 18px;
-    margin: 15px 0;
-  }
-  
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hearts-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hearts-bg::before,
+.hearts-bg::after {
+  content: "💖 💕 💗 💘 💝 💞";
+  position: absolute;
+  width: 100%;
+  font-size: 24px;
+  animation: floatHearts 20s linear infinite;
+  opacity: 0.5;
+}
+
+.hearts-bg::after {
+  animation-duration: 30s;
+  top: -50%;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-200vh); }
+}
+
+.screen {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.screen.active {
+  display: flex;
+}
+
+.question-box, .success-box {
+  background: rgba(255,255,255,0.92);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-width: 400px;
+}
+
+.buttons-container {
+  margin-top: 20px;
+  position: relative;
+}
+
+.game-btn {
+  font-size: 20px;
+  padding: 12px 30px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  transition: transform 0.2s ease;
+}
+
+.game-btn:hover {
+  transform: scale(1.05);
+}
+
+.yes-btn {
+  background: #ff4d6d;
+  color: white;
+}
+
+.no-btn {
+  background: #adb5bd;
+  color: white;
+  position: relative;
+}
