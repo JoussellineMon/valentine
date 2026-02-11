@@ -8,20 +8,23 @@
 </head>
 <body>
 
+<!-- Fondo de corazones -->
+<div class="hearts-bg"></div>
+
 <!-- Pantalla pregunta -->
 <div id="questionScreen" class="screen active">
   <div class="question-container">
     <div class="question-box">
       <h2 class="question-text">Mi amor 😍, ¿quieres ser mi Valentine?</h2>
-      
+      <!-- Botones sí y no -->
       <div class="buttons-container">
         <button id="yesBtn" class="game-btn yes-btn">SÍ</button>
         <button id="noBtn" class="game-btn no-btn">NO</button>
-<!-- Gatito oculto -->
+
+        <!-- Gatito oculto -->
       <div id="catArea" style="display:none; margin:15px 0;">
         <img src="gatito.jpg" style="width:180px; border-radius:12px;">
       </div>    
-    
       </div>
     </div>
   </div>
@@ -31,14 +34,17 @@
 <div id="successScreen" class="screen">
   <div class="success-container">
     <div class="success-box">
-      <h2>¡Gracias mi amor 😍 por aceptar! 💕</h2>
-      <p> De: Tu princesa</p>
-      <p>Contigo quiero seguir escribiendo nuestra historia</p>
-      <p>Te amo con todo mi corazón mi hombre 🫶🏻💖</p>
-      <p>Eres lo mejor que me ha pasado en la vida 🥰😘</p>
+      <h2>💖 Siempre tú 💖</h2>
+      <p>Desde que llegaste a mi vida, todo tiene más luz, más risa y más amor.</p>
+      <p>Contigo quiero seguir construyendo cada sueño, cada abrazo y cada mañana.</p>
+      <p>Gracias por ser mi hogar, mi paz y mi persona favorita. 🥹✨</p>
+      <p><b>Te amo infinitamente 💕</b></p>
     </div>
   </div>
 </div>
+
+<!-- Música -->
+<audio id="loveSong" src="perfect.mp3"></audio>
 
 <script src="script.js"></script>
 </body>
