@@ -6,32 +6,22 @@ body {
   overflow: hidden;
 }
 
-.hearts-bg {
+/* 💖 Corazones flotantes random */
+.hearts-bg span {
   position: fixed;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
+  font-size: 32px;
+  animation: floatUp linear infinite;
+  opacity: 0.8;
+  user-select: none;
 }
 
-.hearts-bg::before,
-.hearts-bg::after {
-  content: "💖 💕 💗 💘 💝 💞";
-  position: absolute;
-  width: 100%;
-  font-size: 24px;
-  animation: floatHearts 20s linear infinite;
-  opacity: 0.5;
-}
-
-.hearts-bg::after {
-  animation-duration: 30s;
-  top: -50%;
-}
-
-@keyframes floatHearts {
-  0% { transform: translateY(100vh); }
-  100% { transform: translateY(-200vh); }
+@keyframes floatUp {
+  from {
+    transform: translateY(100vh) scale(1);
+  }
+  to {
+    transform: translateY(-10vh) scale(1.4);
+  }
 }
 
 .screen {
@@ -49,12 +39,12 @@ body {
 }
 
 .question-box, .success-box {
-  background: rgba(255,255,255,0.92);
+  background: rgba(255,255,255,0.93);
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 22px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  max-width: 400px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+  max-width: 420px;
 }
 
 .buttons-container {
@@ -73,7 +63,7 @@ body {
 }
 
 .game-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .yes-btn {
